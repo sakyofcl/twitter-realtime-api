@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Twitter Monitoring</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <h1 class="display-4">
+                            Currency Streaming
+                            <span style="font-size:18px;" class="badge badge-danger" id="connection-status">Disconnected</span>
+                        </h1>
+                      <p class="lead">
+                        Currency streaming refers to the real-time exchange rate data feed that provides continuously updated information about the exchange rates of different currencies
+                      </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <span id="list-all-terms"></span>
+                <div id="currencyOption" class="d-flex">
+                      <div class="form-check mr-2">
+                        <input class="form-check-input" type="checkbox" value="" id="ETH-USD" checked>
+                        <label class="form-check-label" for="ETH-USD">
+                            ETH-USD
+                        </label>
+                      </div>
+                      <div class="form-check mr-2">
+                        <input class="form-check-input" type="checkbox" value="" id="BTC-USD" >
+                        <label class="form-check-label" for="BTC-USD">
+                            BTC-USD
+                        </label>
+                      </div>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex align-items-center justify-content-end">
+                <button class="btn btn-primary mr-3" type="button" id="send-term" disabled>SEND</button>
+                <button type="button" class="btn btn-secondary" id="toggle-connection">Toggle Connection</button>
+            </div>
+        </div>
+
+        <div class="row mt-5" id="list-all-tweets">
+            <!--List All The Stream Twits-->
+
+        </div>
+        <div class="row mt-5">
+            <div class="card w-100 mb-3" id="ETH-USD">
+                <div class="card-horizontal">
+                    <div class="img-square-wrapper p-2">
+                        <img class="h-auto" style="width:400px;" src="https://coinyep.com/img/share/ETH-USD.png" alt="Card image cap">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">ETH-USD</h4>
+                        <p class="card-text">Price : <b id="ETH-USD-p"></b> </p>
+                        <p class="card-text">Quantity of the trade : <b id="ETH-USD-q"></b> </p>
+                        <p class="card-text">Daily change percentage : <b id="ETH-USD-dc"></b> </p>
+                        <p class="card-text">Difference price : <b id="ETH-USD-dd"></b> </p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted" id="ETH-USD-t"></small>
+                </div>
+            </div>
+            <div class="card w-100">
+                <div class="card-horizontal">
+                    <div class="img-square-wrapper p-2">
+                        <img class="h-auto" style="width:400px;" src="https://coinyep.com/img/share/BTC-USD.png" alt="Card image cap">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">BTC-USD</h4>
+                        <p class="card-text">Price : <b id="BTC-USD-p"></b> </p>
+                        <p class="card-text">Quantity of the trade : <b id="BTC-USD-q" ></b> </p>
+                        <p class="card-text">Daily change percentage : <b id="BTC-USD-dc"></b> </p>
+                        <p class="card-text">Difference price : <b id="BTC-USD-dd"></b> </p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted" id="BTC-USD-t"></small>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+</html>

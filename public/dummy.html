@@ -1,0 +1,8 @@
+<script src="https://socketio.mtgox.com/socket.io/socket.io.js"></script>
+<script>
+    var conn = io.connect('https://socketio.mtgox.com/mtgox');
+    conn.on('message', function(data) {
+        // Handle incoming data object.
+        console.log(data);
+    });
+</script>
